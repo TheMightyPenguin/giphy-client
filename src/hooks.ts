@@ -13,6 +13,7 @@ export function useFetch<T>(...args: Parameters<typeof fetch>): FetchResult<T> {
     if (url in cache) {
       // @ts-ignore
       setData(cache[url]);
+      setLoading(false);
       return;
     }
 
